@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4">
+			<!-- user type text for they can search inside the JSON file -->
+			<input type="text" id="search" name="search" class="form-control" value="Search for codeno or codename" />
+		</div>
+		<div class="col-md-4">
+			<!-- drop down option for codeno (need to work on filter, for it can get results in <td>) -->
+			<select id="codeno">
+				<option>Codeno</option>
+			</select>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="table-responsive">
+				<!-- using tablesorter to make the heading sort the info in the <td> list -->
+				<table id="mainTable" class="table tablesorter">
+					<!-- heading of the table in the index.html page -->
+					<thead id="headings">
+						<tr>
+							<th>CODENO</th>
+							<th>CODENAME</th>
+							<th>PTAM</th>
+							<th>PTAP</th>
+							<th >PTAT</th>
+							<th>TPI</th>
+						</tr>
+					</thead>
+						<!-- displaying the bulls.json table -->
+						<tbody id="display"></tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+	<script type="text/javascript" src="scripts/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.tablesorter.min.js"></script>
+	<script type="text/javascript" src="scripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="scripts/list_view.js"></script>
+	<script type="text/javascript" src="scripts/search.js"></script>
+	<script type="text/javascript" src="scripts/selected.js"></script>
+</body>
+</html>
