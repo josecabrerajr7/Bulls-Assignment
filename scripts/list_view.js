@@ -27,10 +27,6 @@ $(document).ready(function($) {
 
             });
 
-          
-
-            
-          
             // the headings will be sort using A or Z and numbers from negative high and positive high number
             { 
                 $("#mainTable").tablesorter( {sortList: [[0,0], [1,0]]} ); 
