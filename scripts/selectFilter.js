@@ -7,6 +7,8 @@ $(document).ready(function($) {
 			var $optionCodeno = $("<option>").attr("value", val.codeno).text(val.codeno);
 			$selectCodeno.append($optionCodeno);
 		});
+		// When codeno select has selected a value, it will compare and change codename select to its matching 
+		// value of unique id
 		$("#codeno").change(function () {
    			$('#codename').empty().append($('<option></option>').val('Select Codename').html('Select Codename'));
  			var matchVal = $("#codeno option:selected").text();
@@ -16,6 +18,7 @@ $(document).ready(function($) {
 			}	 
  			});
    		});
+   		// when user select codename from the dropdown it will filter the bottom table to the select value 
 		$('#codename').change(function () {
     	var selectValue = $('#codename option:selected').val();
 		var regex = new RegExp(selectValue, "i");
@@ -38,8 +41,12 @@ $(document).ready(function($) {
 					count++;
 			}
 		});
+				
 				output += '</tr>';
 				$('#display').html(output);
+			
+			// when user select 'Select Codename' in the select field it will return the table back to normal
+			// and empty the select value of #codeno and #codename
 			if (selectCodename == 'Select Codename') {
 				$('#codename').append($('<option></option>').text('Select Codename'));
 				$('#codeno').empty().append($('<option></option>').text('Select Codeno'));
@@ -52,6 +59,8 @@ $(document).ready(function($) {
 							$selectCodeno.append($optionCodeno);
 						});
 					}
+				// going to put the display back to normal when codename select 'Select Codename'
+				// is switch back
 				$.each(data.results, function(key, val){
             		$('#display').append('<tr>' 
                 		+ '<td class="codenoVal">'
