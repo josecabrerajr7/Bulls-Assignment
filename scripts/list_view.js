@@ -1,4 +1,4 @@
-$(document).ready(function($) {
+$(document).ready(function ($) {
     // main coding to display the json in the index.html page
 	 $.getJSON('bulls.json', function(data){
           $.each(data.results, function(key, val){
@@ -17,14 +17,6 @@ $(document).ready(function($) {
                 + this['tpi'] 
                 + '</td>' 
                 + '</tr>');  
-
-                $('.codenoVal').attr("value", this['codeno']);
-                $('.codenameVal').attr("value", this['codename']);
-                $('.ptamVal').attr("value", this['ptam']);
-                $('.ptapVal').attr("value", this['ptap']);
-                $('.ptatVal').attr("value", this['ptat']);
-                $('.tpiVal').attr("value", this['tpi']);
-
             });
 
             // the headings will be sort using A or Z and numbers from negative high and positive high number
